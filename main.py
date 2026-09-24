@@ -42,15 +42,32 @@ def hill_climbing(parameters):
     current_parameters = parameters
     current_reward = test_agent(current_parameters)
 
+    rewards = []
+    rewards.append(current_reward)
+    
     for step in range (100):
         neighbour = current_parameters + np.random.uniform(-0.1, 0.1, 5)
         neighbour_reward = test_agent(neighbour)
+        
+        rewards.append(neighbour_reward)
+        
         if neighbour_reward > current_reward:
             current_parameters = neighbour
             current_reward = neighbour_reward
 
 
-    return current_parameters, current_reward        
+    return current_parameters, current_reward   
+
+
+# Testing hill_climbing
+parameters = np.random.uniform(-1, 1, size=5)
+best_parameters, best_reward = hill_climbing(parameters)
+print(best_parameters)
+print(best_reward)
+
+
+
+
         
    
 
