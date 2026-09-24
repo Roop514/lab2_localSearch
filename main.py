@@ -61,7 +61,7 @@ def hill_climbing(parameters):
 
 # Testing hill_climbing
 parameters = np.random.uniform(-1, 1, size=5)
-best_parameters, best_reward = hill_climbing(parameters)
+best_parameters, best_reward, rewards = hill_climbing(parameters)
 print(best_parameters)
 print(best_reward)
 
