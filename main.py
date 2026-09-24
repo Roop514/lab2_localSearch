@@ -62,7 +62,7 @@ def hill_climbing(parameters, step_size=1.0, num_iterations=40):
 
 
     return current_parameters, current_reward, rewards   
-def hill_climbing_with_restarts(num_restarts=5, step_size=1.0, num_interations=40):
+def hill_climbing_with_restarts(num_restarts=5, step_size=1.0, num_iterations=40):
     """
     Runs hill_climbing multiple times from different random starting points,
     and keeps the best result found across all restarts. This avoids getting
@@ -83,12 +83,12 @@ def hill_climbing_with_restarts(num_restarts=5, step_size=1.0, num_interations=4
 
         if reward > best_reward:
             best_parameters = parameters
-            best_reward = rewward
+            best_reward = reward
 
     return best_parameters, best_reward, all_rewards
 
 
-best_parameters, best_reward, rewards = hill_climbing_with_restarts(num_restarts=5, step_size=1.0, num_interations=40)
+best_parameters, best_reward, rewards = hill_climbing_with_restarts(num_restarts=5, step_size=1.0, num_iterations=40)
 
 print(best_parameters)
 print(best_reward)
