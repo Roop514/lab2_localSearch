@@ -2,3 +2,4 @@ numpy
 scipy
 gymnasium
 pygame-ce
+matplotlib
