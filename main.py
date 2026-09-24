@@ -56,7 +56,7 @@ def hill_climbing(parameters):
             current_reward = neighbour_reward
 
 
-    return current_parameters, current_reward   
+    return current_parameters, current_reward, rewards   
 
 
 # Testing hill_climbing
