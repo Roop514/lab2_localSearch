@@ -1,6 +1,8 @@
 from gymnasium.envs.classic_control.cartpole import CartPoleEnv
 from agent import CartPoleAgent
 import numpy as np
+import matplotlib.pyplot as plt
+
 np.set_printoptions(precision=2)
 
 
@@ -92,6 +94,18 @@ best_parameters, best_reward, rewards = hill_climbing_with_restarts(num_restarts
 
 print(best_parameters)
 print(best_reward)
+
+#Task 2
+
+plt.figure(figsize=(8, 5))
+plt.plot(rewards, marker='o', markersize=3, linewidth=1)
+plt.xlabel("Evaluation number")
+plt.ylabel("Cumulative reward")
+plt.title("CartPole Hill-Climbing Search Performance Over Time")
+plt.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.savefig("search_performance.png")
+print("Plot saved as search_performance.png")
 
 
 
